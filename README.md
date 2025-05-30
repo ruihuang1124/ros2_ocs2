@@ -41,7 +41,7 @@ mkdir -p ocs2_ros2_ws/src
 
 ```bash
 cd ~/ocs2_ws/src
-git clone https://github.com/Zionshang/ocs2_ros2.git
+git clone https://github.com/ruihuang1124/ros2_ocs2.git
 ```
 
 * build
@@ -56,6 +56,6 @@ colcon build
 * Run the legged robot example
 ```bash
 source ~/ocs2_ws/install/setup.bash
-ros2 launch ocs2_legged_robot_ros legged_robot_ddp.launch.py
+ros2 launch ocs2_legged_robot_ros legged_robot_sqp.launch.py
 ```
 
