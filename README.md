@@ -21,12 +21,8 @@ sources.
 ```bash
 sudo apt update
 sudo apt install libeigen3-dev 
+sudo apt-get install ros-humble-grid-map-cv ros-humble-grid-map-msgs ros-humble-grid-map-ros ros-humble-grid-map-sdf ros-humble-octomap libmpfr-dev libpcap-dev libglpk-dev libglfw3-dev
 ```
-
-* Pinocchio
-
-[Recommended installation](https://stack-of-tasks.github.io/pinocchio/download.html)
-
 
 ### 2.3 Clone Repositories
 
@@ -41,14 +37,19 @@ mkdir -p ocs2_ros2_ws/src
 
 ```bash
 cd ~/ocs2_ws/src
+# Clone ocs2_ros2
 git clone https://github.com/ruihuang1124/ros2_ocs2.git
+# Clone pinocchio
+git clone --recurse-submodules https://github.com/ruihuang1124/pinocchio.git
+# Clone hpp-fcl
+git clone --recurse-submodules https://github.com/ruihuang1124/hpp-fcl.git
 ```
 
 * build
 
 ```bash
 cd ~/ocs2_ws
-colcon build
+colcon build --packages-up-to ocs2_legged_robot_ros ocs2_self_collision_visualization --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo
 ```
 
 ## 3 Run Example
