@@ -30,13 +30,13 @@ sudo apt-get install ros-humble-grid-map-cv ros-humble-grid-map-msgs ros-humble-
 
 ```bash
 cd ~
-mkdir -p ocs2_ros2_ws/src
+mkdir -p colcon_ws/src
 ```
 
 * Clone the repository
 
 ```bash
-cd ~/ocs2_ws/src
+cd ~/colcon_ws/src
 # Clone ocs2_ros2
 git clone https://github.com/ruihuang1124/ros2_ocs2.git
 # Clone pinocchio
@@ -48,7 +48,7 @@ git clone --recurse-submodules https://github.com/ruihuang1124/hpp-fcl.git
 * build
 
 ```bash
-cd ~/ocs2_ws
+cd ~/colcon_ws
 colcon build --packages-up-to ocs2_legged_robot_ros ocs2_self_collision_visualization --cmake-args -DCMAKE_BUILD_TYPE=RelWithDebInfo
 ```
 
@@ -56,7 +56,7 @@ colcon build --packages-up-to ocs2_legged_robot_ros ocs2_self_collision_visualiz
 
 * Run the legged robot example
 ```bash
-source ~/ocs2_ws/install/setup.bash
+source ~/colcon_ws/install/setup.bash
 ros2 launch ocs2_legged_robot_ros legged_robot_sqp.launch.py
 ```
 
